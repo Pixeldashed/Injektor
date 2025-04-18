@@ -1,0 +1,5 @@
+return {
+    VPRP_Old = false,
+    VPRP_Free = false,
+    VPRP_Paid = false
+}
